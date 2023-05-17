@@ -1,5 +1,5 @@
 :root {
-  --__code-block-font-size: 16px;
+  --__code-block-font-size: var(--catalog-body-l-font-size);
 }
 
 .example {
@@ -63,7 +63,6 @@ pre[class*="language-"],
 
 /* Code blocks */
 pre[class*="language-"] {
-  margin: 1em 0;
   overflow: auto;
   scrollbar-width: none;
 }

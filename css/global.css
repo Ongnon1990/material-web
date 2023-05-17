@@ -25,10 +25,25 @@
   --top-app-bar-height: 48px;
   --top-app-bar-padding-block: 12px;
   scroll-padding-block-start: calc(var(--top-app-bar-height) + var(--top-app-bar-padding-block) * 2);
+  --catalog-display-xl-font-size: 88px;
+  --catalog-display-m-font-size: 45px;
+  --catalog-title-l-font-size: 22px;
+  --catalog-title-m-font-size: 16px;
+  --catalog-title-s-font-size: 14px;
+  --catalog-body-l-font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --catalog-display-xl-font-size: 55px;
+    --catalog-title-l-font-size: 16px;
+    --catalog-body-l-font-size: 14px;
+  }
 }
 
 body {
   margin: 0;
+  font-size: var(--catalog0body-l-font-size);
 }
 
 a {
@@ -59,4 +74,8 @@ md-list-item-link {
 
 md-list-item-link:first-of-type {
   margin-block: 4px;
+}
+
+h1 {
+  font-size: 48px;
 }
