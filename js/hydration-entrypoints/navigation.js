@@ -22,7 +22,7 @@ import"../chunk-HICTBDKV.js";import"../chunk-2OZZ2C3J.js";import{a as nt}from"..
           </div>
         </div>
       </div>
-    `}onScrimClick(){c.value=!1}firstUpdated(){let e=window.matchMedia("(max-width: 900px)");this.isMobile=e.matches,e.addEventListener("change",o=>{this.isMobile=o.matches})}};S.styles=x`
+    `}onScrimClick(){c.value=!1}firstUpdated(){let e=window.matchMedia("(max-width: 1500px)");this.isMobile=e.matches,e.addEventListener("change",o=>{this.isMobile=o.matches})}};S.styles=x`
     :host {
       --_max-width: 1760px;
       --_drawer-width: var(--drawer-width, 300px);
@@ -97,7 +97,7 @@ import"../chunk-HICTBDKV.js";import"../chunk-2OZZ2C3J.js";import{a as nt}from"..
       }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1500px) {
       .spacer {
         min-width: 0px;
       }
@@ -283,7 +283,7 @@ import"../chunk-HICTBDKV.js";import"../chunk-2OZZ2C3J.js";import{a as nt}from"..
       position: relative;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1500px) {
       .start .home-button {
         display: none;
       }

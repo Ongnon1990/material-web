@@ -57,9 +57,7 @@
       justify-content: center;
     }
 
-    /* clean-css ignore:start */
-    @container (width > 1200px) {
-      /* clean-css ignore:end */
+    @container (width > 1100px) {
       div {
         display: grid;
         grid-gap: 8px;
@@ -78,9 +76,7 @@
         min-height: 100%;
         max-height: 544px;
       }
-      /* clean-css ignore:start */
     }
-    /* clean-css ignore:end */
   `,Ot=M([C("catalog-component-header")],Ot);var Dt=class extends E{render(){return v`<slot></slot>`}};Dt.styles=x`
     :host {
       width: 100%;
@@ -280,7 +276,7 @@
       position: relative;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1500px) {
       .start .home-button {
         display: none;
       }
@@ -319,7 +315,7 @@
           </div>
         </div>
       </div>
-    `}onScrimClick(){Pe.value=!1}firstUpdated(){let t=window.matchMedia("(max-width: 900px)");this.isMobile=t.matches,t.addEventListener("change",o=>{this.isMobile=o.matches})}};yt.styles=x`
+    `}onScrimClick(){Pe.value=!1}firstUpdated(){let t=window.matchMedia("(max-width: 1500px)");this.isMobile=t.matches,t.addEventListener("change",o=>{this.isMobile=o.matches})}};yt.styles=x`
     :host {
       --_max-width: 1760px;
       --_drawer-width: var(--drawer-width, 300px);
@@ -394,7 +390,7 @@
       }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1500px) {
       .spacer {
         min-width: 0px;
       }
