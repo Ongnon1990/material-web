@@ -1,1 +1,1 @@
-"use strict";(()=>{function l(o,t,a="material-theme"){let e=globalThis[a];e||(e=new CSSStyleSheet,globalThis[a]=e,o.adoptedStyleSheets.push(e)),e.replaceSync(t),localStorage.setItem("theme-string",t)}var n=localStorage.getItem("theme-string");n&&l(document,n);})();
+"use strict";(()=>{function l(n,a,t="material-theme"){let e=globalThis[t];e||(e=new CSSStyleSheet,globalThis[t]=e,n.adoptedStyleSheets.push(e)),e.replaceSync(a),localStorage.setItem(t,a)}var o=localStorage.getItem("material-theme");o&&l(document,o);})();
