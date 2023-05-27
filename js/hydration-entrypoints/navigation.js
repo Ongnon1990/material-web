@@ -25,7 +25,7 @@ import"../chunk-HICTBDKV.js";import"../chunk-2OZZ2C3J.js";import{a as nt}from"..
     `}onScrimClick(){c.value=!1}firstUpdated(){let e=window.matchMedia("(max-width: 1500px)");this.isMobile=e.matches,e.addEventListener("change",o=>{this.isMobile=o.matches})}};S.styles=x`
     :host {
       --_max-width: 1760px;
-      --_drawer-width: var(--drawer-width, 300px);
+      --_drawer-width: var(--catalog-drawer-width, 300px);
       --_item-border-radius: var(--md-dialog-container-shape, 28px);
       --_border-radius: calc(var(--_item-border-radius) + 12px);
       --_content-padding: 24px;
@@ -75,7 +75,7 @@ import"../chunk-HICTBDKV.js";import"../chunk-2OZZ2C3J.js";import{a as nt}from"..
       position: fixed;
       isolation: isolate;
       inset: calc(
-          var(--top-app-bar-height) + 2 * var(--top-app-bar-padding-block)
+          var(--catalog-top-app-bar-height) + 2 * var(--catalog-top-app-bar-padding-block)
         )
         0 0 0;
       z-index: 12;
@@ -208,14 +208,14 @@ import"../chunk-HICTBDKV.js";import"../chunk-2OZZ2C3J.js";import{a as nt}from"..
     :host,
     header {
       display: block;
-      height: var(--top-app-bar-height);
-      padding: var(--top-app-bar-padding-block) 8px;
+      height: var(--catalog-top-app-bar-height);
+      padding: var(--catalog-top-app-bar-padding-block) 8px;
     }
 
     header {
       position: fixed;
       inset: 0 0 auto 0;
-      padding-block-start: var(--top-app-bar-padding-block);
+      padding-block-start: var(--catalog-top-app-bar-padding-block);
       background-color: var(
         --top-app-bar-color-background,
         var(--md-sys-color-background)

@@ -1,0 +1,1 @@
+"use strict";(()=>{function S(o,a,t="material-theme"){let e=globalThis[t];e||(e=new CSSStyleSheet,globalThis[t]=e,o.adoptedStyleSheets.push(e)),e.replaceSync(a),localStorage.setItem(t,a)}var l=localStorage.getItem("material-theme");l&&S(document,l);})();
