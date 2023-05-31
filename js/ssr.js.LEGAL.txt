@@ -157,20 +157,6 @@ lit-html/node/directive.js:
    * SPDX-License-Identifier: BSD-3-Clause
    */
 
-lit-html/node/directive-helpers.js:
-  /**
-   * @license
-   * Copyright 2020 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   */
-
-lit-html/node/directives/live.js:
-  /**
-   * @license
-   * Copyright 2020 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   */
-
 lit-html/node/directives/class-map.js:
   /**
    * @license
@@ -186,6 +172,20 @@ lit-html/node/directives/when.js:
    */
 
 lit-html/node/static.js:
+  /**
+   * @license
+   * Copyright 2020 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
+
+lit-html/node/directive-helpers.js:
+  /**
+   * @license
+   * Copyright 2020 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
+
+lit-html/node/directives/live.js:
   /**
    * @license
    * Copyright 2020 Google LLC
