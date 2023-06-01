@@ -1,10 +1,16 @@
 /**
- * @fileoverview The core of the library, defining Story and Collection.
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CSSResult, html, nothing, render, TemplateResult } from 'lit';
-import { Knob, KnobValues, PolymorphicArrayOfKnobs } from './knobs.js';
-export { Knob, PolymorphicArrayOfKnobs } from './knobs.js';
+/* Slimmed down version of Lit stories story file */
+
+import {CSSResult, html, nothing, render, TemplateResult} from 'lit';
+
+import {Knob, KnobValues, PolymorphicArrayOfKnobs} from './knobs.js';
+
+export {Knob, PolymorphicArrayOfKnobs} from './knobs.js';
 
 /** Metadata all stories share. */
 export interface BaseStoryInit {
@@ -18,23 +24,22 @@ export interface BaseStoryInit {
 type GenericKnobValues = KnobValues<PolymorphicArrayOfKnobs>;
 
 /** A story with an arbitrary render function. */
-export interface StoryInit<KV extends GenericKnobValues = GenericKnobValues>
-  extends BaseStoryInit {
-  render(container: HTMLElement | DocumentFragment, knobs: KV): Promise<void>;
+export interface StoryInit<
+    KV extends GenericKnobValues = GenericKnobValues> extends BaseStoryInit {
+  render(container: HTMLElement|DocumentFragment, knobs: KV): Promise<void>;
   styles?: CSSStyleSheet[];
 }
 
-class StoryImpl<
-  Knobs extends PolymorphicArrayOfKnobs = PolymorphicArrayOfKnobs
-> {
+class StoryImpl<Knobs extends PolymorphicArrayOfKnobs =
+                                  PolymorphicArrayOfKnobs> {
   readonly name: string;
   readonly id: string;
-  readonly description: string | undefined;
-  readonly render: (container: HTMLElement | DocumentFragment) => Promise<void>;
-  readonly dispose: (container: HTMLElement | DocumentFragment) => void;
+  readonly description: string|undefined;
+  readonly render: (container: HTMLElement|DocumentFragment) => Promise<void>;
+  readonly dispose: (container: HTMLElement|DocumentFragment) => void;
   readonly knobs: KnobValues<Knobs>;
 
-  private readonly initStyles: CSSStyleSheet[] | undefined;
+  private readonly initStyles: CSSStyleSheet[]|undefined;
 
   get styles() {
     let styles = [...this.collection.customStyles];
@@ -49,22 +54,19 @@ class StoryImpl<
     this.description = init.description;
     this.id = init.id || this.name.replace(/ /g, '_').replace(/,/g, '');
     if (this.id.includes('/')) {
-      const message =
-        `A story id can't contain a '/' character. ` +
-        `The name can, but if so you have to give an ` +
-        `explicit id that doesn't.`;
+      const message = `A story id can't contain a '/' character. ` +
+          `The name can, but if so you have to give an ` +
+          `explicit id that doesn't.`;
       throw new Error(message);
     }
-    const wrapperDivMap = new WeakMap<
-      HTMLElement | DocumentFragment,
-      HTMLDivElement
-    >();
+    const wrapperDivMap =
+        new WeakMap<HTMLElement|DocumentFragment, HTMLDivElement>();
 
     this.initStyles = init.styles;
 
     this.knobs = collection.knobs;
 
-    this.render = async (container: HTMLElement | DocumentFragment) => {
+    this.render = async (container: HTMLElement|DocumentFragment) => {
       let wrapperDiv = wrapperDivMap.get(container);
       if (wrapperDiv === undefined) {
         wrapperDiv = document.createElement('div');
@@ -75,7 +77,7 @@ class StoryImpl<
       await init.render(wrapperDiv, this.knobs);
     };
 
-    this.dispose = (container: HTMLElement | DocumentFragment) => {
+    this.dispose = (container: HTMLElement|DocumentFragment) => {
       wrapperDivMap.delete(container);
       render(nothing, container);
     };
@@ -91,9 +93,8 @@ class StoryImpl<
  * The type is exposed here, but the implementation isn't, because a Story
  * must be constructed via a Collection.
  */
-export type Story<
-  Knobs extends PolymorphicArrayOfKnobs = PolymorphicArrayOfKnobs
-> = StoryImpl<Knobs>;
+export type Story<Knobs extends PolymorphicArrayOfKnobs =
+                                    PolymorphicArrayOfKnobs> = StoryImpl<Knobs>;
 
 /**
  * A tree of related stories and sub-collections.
@@ -105,10 +106,9 @@ export type Story<
  * either a toplevel collection for a named component, or it is a member of
  * exactly one collection.
  */
-export class Collection<
-  T extends PolymorphicArrayOfKnobs = ReadonlyArray<Knob<unknown>>
-> {
-  private readonly children = new Map<string, Story | Collection>();
+export class Collection<T extends PolymorphicArrayOfKnobs =
+                                      ReadonlyArray<Knob<unknown>>> {
+  private readonly children = new Map<string, Story|Collection>();
   readonly customStyles: CSSStyleSheet[] = [];
   private static readonly collectionsByName = new Map<string, Collection>();
   readonly knobs: KnobValues<T>;
@@ -136,7 +136,7 @@ export class Collection<
     return stories;
   }
 
-  get tree(): ReadonlyMap<string, Story<T> | Collection<T>> {
+  get tree(): ReadonlyMap<string, Story<T>|Collection<T>> {
     return this.children;
   }
 
@@ -148,9 +148,8 @@ export class Collection<
     for (const init of inits) {
       const story = new StoryImpl(init, this);
       if (this.children.has(story.id)) {
-        const message = `A story or subcollection already exists with the id ${JSON.stringify(
-          story.id
-        )}`;
+        const message = `A story or subcollection already exists with the id ${
+            JSON.stringify(story.id)}`;
         // Don't throw an error, as that will disrupt live_reload / hot reload,
         // by halting this module's initialization.
         console.error(message);
@@ -169,10 +168,10 @@ export class Collection<
  * Describes a single configuration of a specific web UI component.
  */
 export interface LitStoryInit<
-  KV extends KnobValues<PolymorphicArrayOfKnobs> = KnobValues<PolymorphicArrayOfKnobs>
-> extends BaseStoryInit {
-  renderLit(knobs: KV): TemplateResult | Promise<TemplateResult>;
-  litStyles?: CSSResult | CSSResult[];
+    KV extends KnobValues<PolymorphicArrayOfKnobs> =
+                   KnobValues<PolymorphicArrayOfKnobs>> extends BaseStoryInit {
+  renderLit(knobs: KV): TemplateResult|Promise<TemplateResult>;
+  litStyles?: CSSResult|CSSResult[];
 }
 
 function isLitStoryInit(init: Partial<LitStoryInit>): init is LitStoryInit {
@@ -182,21 +181,19 @@ function isLitStoryInit(init: Partial<LitStoryInit>): init is LitStoryInit {
 /**
  * A collection with convenience methods for rendering lit-html templates.
  */
-export class LitCollection<
-  T extends PolymorphicArrayOfKnobs = ReadonlyArray<Knob<unknown>>
-> extends Collection<T> {
+export class LitCollection<T extends PolymorphicArrayOfKnobs =
+                                         ReadonlyArray<Knob<unknown>>> extends
+    Collection<T> {
   override addStories(
-    ...inits: Array<StoryInit<KnobValues<T>> | LitStoryInit<KnobValues<T>>>
-  ) {
+      ...inits: Array<StoryInit<KnobValues<T>>|LitStoryInit<KnobValues<T>>>) {
     const simpleInits: StoryInit[] = [];
     for (const init of inits) {
       if (isLitStoryInit(init)) {
         let styles: CSSStyleSheet[] = [];
         if (init.litStyles) {
-          styles =
-            init.litStyles instanceof Array
-              ? init.litStyles.map((s) => s.styleSheet!)
-              : [init.litStyles.styleSheet!];
+          styles = init.litStyles instanceof Array ?
+              init.litStyles.map((s) => s.styleSheet!) :
+              [init.litStyles.styleSheet!];
         }
         simpleInits.push({
           ...init,

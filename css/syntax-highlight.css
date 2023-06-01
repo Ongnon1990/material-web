@@ -1,8 +1,17 @@
-:root {
-  --__code-block-font-size: var(--catalog-body-m-font-size);
-}
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
-.example {
+/**
+ * @fileoverview This file handles syntax highlighting for markdown-it /
+ * highlight.js formatted codeblocks as well as playground-elements and anything
+ * else related to code styles.
+ */
+
+ :root {
+  --__code-block-font-size: var(--catalog-body-m-font-size);
   --playground-highlight-color: var(--md-sys-color-primary);
   --playground-code-font-size: var(--__code-block-font-size);
   --playground-code-background: var(--md-sys-color-surface-variant);
@@ -30,7 +39,17 @@
   --playground-preview-toolbar-foreground-color: var(--md-sys-color-on-surface);
 }
 
-.example playground-file-editor {
+/* Formats the code boxes themselves */
+.example playground-file-editor,
+pre[class*="language-"] {
+  padding: var(--__code-block-font-size);
+  /* Remove the extra hard coded 3px from line number padding. */
+  padding-inline-start: calc(var(--__code-block-font-size) - 3px);
+  /* perfect circle of one line is (padding * 2 + (line-height: 1.5x font size)) / 2 */
+  border-radius: calc((2 * var(--__code-block-font-size) + 1.5 * var(--__code-block-font-size))/2);
+}
+
+playground-file-editor {
   margin-block: 1em;
   background-color: var(--md-sys-color-surface-variant);
   text-shadow: 0 1px 1px var(--md-sys-color-surface-variant);
@@ -65,15 +84,6 @@ pre[class*="language-"],
 pre[class*="language-"] {
   overflow: auto;
   scrollbar-width: none;
-}
-
-.example playground-file-editor,
-pre[class*="language-"] {
-  padding: var(--__code-block-font-size);
-  /* Remove the extra hard coded 3px from line number padding. */
-  padding-inline-start: calc(var(--__code-block-font-size) - 3px);
-  /* perfect circle of one line is (padding * 2 + (line-height: 1.5x font size)) / 2 */
-  border-radius: calc((2 * var(--__code-block-font-size) + 1.5 * var(--__code-block-font-size))/2);
 }
 
 /* Inline code */

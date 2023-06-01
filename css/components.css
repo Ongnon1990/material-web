@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 :root {
   --catalog-image-border-radius: 22px;
 }
@@ -120,7 +126,7 @@ tr:last-of-type td:last-of-type {
   border-end-end-radius: 28px;
 }
 
-/* Hides offscreen accesible text */
+/* Hides offscreen accesible text for h1,2,3 hover links. */
 a .offscreen {
   position: absolute;
   left: -10000px;

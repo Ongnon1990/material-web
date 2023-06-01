@@ -17,7 +17,7 @@ import {customElement, property} from 'lit/decorators.js';
 import {classMap} from 'lit/directives/class-map.js';
 import {StyleInfo, styleMap} from 'lit/directives/style-map.js';
 
-import {Knob, KnobUi} from '../knobs';
+import {Knob, KnobUi} from '../knobs.js';
 
 /**
  * A boolean Knob UI.

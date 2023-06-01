@@ -44,9 +44,9 @@ export function title(): KnobUi<void> {
  * @example
  * ```ts
  * // demo.ts
- * import {StoryKnobs} from './stories';
+ * import {StoryKnobs} from './stories.js';
  * import {MaterialCollection, KnobTypesToKnobs} from
- * '@material/web/demo/stories/material-collection';
+ * '@material/web/internal/demo/stories/material-collection';
  *
  * const stories = new MaterialCollection<KnobTypesToKnobs<StoryKnobs>>(...);
  * ```
@@ -64,7 +64,7 @@ export type KnobTypesToKnobs<
  * @example
  * ```ts
  * import {MaterialStoryInit} from
- * '@material/web/demo/stories/material-collection';
+ * '@material/web/internal/demo/stories/material-collection';
  * // stories.ts
  * export interface StoryKnobs {
  *   checked: boolean;

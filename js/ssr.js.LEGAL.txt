@@ -1,5 +1,10 @@
 /**
  * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * @license
  * Copyright 2021 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,11 +16,6 @@
 /**
  * @license
  * Copyright 2022 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * @license
- * Copyright 2023 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 /**
@@ -164,13 +164,6 @@ lit-html/node/directives/class-map.js:
    * SPDX-License-Identifier: BSD-3-Clause
    */
 
-lit-html/node/directives/when.js:
-  /**
-   * @license
-   * Copyright 2021 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   */
-
 lit-html/node/static.js:
   /**
    * @license
@@ -203,6 +196,13 @@ lit-html/node/directives/style-map.js:
   /**
    * @license
    * Copyright 2018 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
+
+lit-html/node/directives/when.js:
+  /**
+   * @license
+   * Copyright 2021 Google LLC
    * SPDX-License-Identifier: BSD-3-Clause
    */
 
