@@ -308,6 +308,10 @@
     :host {
       --_max-width: 1760px;
       --_drawer-width: var(--catalog-drawer-width, 300px);
+      /* When in wide mode inline start margin is handled by the sidebar */
+      --_pane-margin-inline-start: 0;
+      --_pane-margin-inline-end: var(--catalog-spacing-xl);
+      --_pane-margin-block-end: var(--catalog-spacing-xl);
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
@@ -340,13 +344,13 @@
       width: 100%;
       /* Explicit height to make overflow work */
       height: calc(
-        100dvh - var(--catalog-top-app-bar-height) - var(--catalog-spacing-xl)
+        100dvh - var(--catalog-top-app-bar-height) -
+          var(--_pane-margin-block-end)
       );
       background-color: var(--md-sys-color-surface);
       border-radius: var(--catalog-shape-xl);
       padding-block: var(--catalog-spacing-xl);
-      /* no margin-inline-start because that's covered by the sidebar */
-      margin-inline-end: var(--catalog-spacing-xl);
+      margin-inline: var(--_pane-margin-inline-start) var(--_pane-margin-inline-end);
       /* emphasized – duration matching render fn for sidebar */
       transition: 0.5s cubic-bezier(0.3, 0, 0, 1);
       transition-property: margin, height, border-radius;
@@ -413,7 +417,7 @@
       }
 
       .pane {
-        margin-inline: var(--catalog-spacing-xl);
+        --_pane-margin-inline-start: var(--catalog-spacing-xl);
       }
 
       .open aside {
@@ -438,7 +442,9 @@
       .pane {
         border-end-start-radius: 0;
         border-end-end-radius: 0;
-        margin: 0;
+        --_pane-margin-inline-start: 0;
+        --_pane-margin-inline-end: 0;
+        --_pane-margin-block-end: 0;
       }
     }
 
