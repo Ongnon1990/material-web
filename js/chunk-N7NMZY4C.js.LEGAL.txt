@@ -42,6 +42,13 @@ Bundled license information:
    * SPDX-License-Identifier: BSD-3-Clause
    */
 
+@lit/reactive-element/decorators/query-assigned-elements.js:
+  /**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
+
 @lit/reactive-element/decorators/event-options.js:
   /**
    * @license
@@ -53,13 +60,6 @@ Bundled license information:
   /**
    * @license
    * Copyright 2017 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   */
-
-@lit/reactive-element/decorators/query-assigned-elements.js:
-  /**
-   * @license
-   * Copyright 2021 Google LLC
    * SPDX-License-Identifier: BSD-3-Clause
    */
 
