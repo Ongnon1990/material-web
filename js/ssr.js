@@ -395,7 +395,6 @@
     }
 
     .pane.toc h2 {
-      white-space: nowrap;
       margin-block: var(--catalog-spacing-s) var(--catalog-spacing-m);
       font-size: var(--catalog-headline-s-font-size);
     }

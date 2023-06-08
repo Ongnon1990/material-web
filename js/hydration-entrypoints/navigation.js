@@ -117,7 +117,6 @@ import"../chunk-W3WXIWI4.js";import"../chunk-F3H2WG6O.js";import{a as mt}from"..
     }
 
     .pane.toc h2 {
-      white-space: nowrap;
       margin-block: var(--catalog-spacing-s) var(--catalog-spacing-m);
       font-size: var(--catalog-headline-s-font-size);
     }
