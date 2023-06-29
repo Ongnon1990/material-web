@@ -986,7 +986,7 @@
         @pointerleave=${this.onPointerleave}
         @keydown=${this.onKeydown}
       >${t}</a>
-    `}};c([v()],Ee.prototype,"href",void 0);c([v()],Ee.prototype,"target",void 0);var Ye=class extends Ee{constructor(){super(...arguments),this.noninteractive=!1}getRenderClasses(){return{...super.getRenderClasses(),noninteractive:this.noninteractive}}renderRipple(){return this.noninteractive?y:super.renderRipple()}};c([v()],Ye.prototype,"noninteractive",void 0);var Io=class extends Ye{};Io.styles=[an,on];Io=c([k("md-list-item-link")],Io);var sn,Yt=class extends A{constructor(){super(...arguments),this.progress=0,this.indeterminate=!1,this.fourColor=!1}render(){let t={indeterminate:this.indeterminate,"four-color":this.fourColor},{ariaLabel:e}=this;return f`
+    `}};c([v()],Ee.prototype,"href",void 0);c([v()],Ee.prototype,"target",void 0);var Ye=class extends Ee{constructor(){super(...arguments),this.noninteractive=!1}getRenderClasses(){return{...super.getRenderClasses(),noninteractive:this.noninteractive}}renderRipple(){return this.noninteractive?y:super.renderRipple()}renderFocusRing(){return this.noninteractive?y:super.renderFocusRing()}};c([v()],Ye.prototype,"noninteractive",void 0);var Io=class extends Ye{};Io.styles=[an,on];Io=c([k("md-list-item-link")],Io);var sn,Yt=class extends A{constructor(){super(...arguments),this.progress=0,this.indeterminate=!1,this.fourColor=!1}render(){let t={indeterminate:this.indeterminate,"four-color":this.fourColor},{ariaLabel:e}=this;return f`
       <div
         class="circular-progress ${L(t)}"
         role="progressbar"
