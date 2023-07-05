@@ -986,7 +986,7 @@
         @pointerleave=${this.onPointerleave}
         @keydown=${this.onKeydown}
       >${e}</a>
-    `}};c([v()],St.prototype,"href",void 0);c([v()],St.prototype,"target",void 0);var Kt=class extends St{constructor(){super(...arguments),this.noninteractive=!1}getRenderClasses(){return{...super.getRenderClasses(),noninteractive:this.noninteractive}}renderRipple(){return this.noninteractive?g:super.renderRipple()}renderFocusRing(){return this.noninteractive?g:super.renderFocusRing()}};c([v()],Kt.prototype,"noninteractive",void 0);var Po=class extends Kt{};Po.styles=[nn,an];Po=c([k("md-list-item-link")],Po);var ln,Xe=class extends A{constructor(){super(...arguments),this.progress=0,this.indeterminate=!1,this.fourColor=!1}render(){let e={indeterminate:this.indeterminate,"four-color":this.fourColor},{ariaLabel:t}=this;return f`
+    `}};c([v()],St.prototype,"href",void 0);c([v()],St.prototype,"target",void 0);var Kt=class extends St{constructor(){super(...arguments),this.noninteractive=!1}getRenderClasses(){return{...super.getRenderClasses(),noninteractive:this.noninteractive}}renderRipple(){return this.noninteractive?g:super.renderRipple()}renderFocusRing(){return this.noninteractive?g:super.renderFocusRing()}};c([v({type:Boolean})],Kt.prototype,"noninteractive",void 0);var Po=class extends Kt{};Po.styles=[nn,an];Po=c([k("md-list-item-link")],Po);var ln,Xe=class extends A{constructor(){super(...arguments),this.progress=0,this.indeterminate=!1,this.fourColor=!1}render(){let e={indeterminate:this.indeterminate,"four-color":this.fourColor},{ariaLabel:t}=this;return f`
       <div
         class="circular-progress ${D(e)}"
         role="progressbar"
