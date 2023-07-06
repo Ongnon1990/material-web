@@ -1,0 +1,4 @@
+# This deploys to the the App Engine preview service used for pull requests
+runtime: nodejs20
+instance_class: F2
+service: preview

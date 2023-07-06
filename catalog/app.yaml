@@ -1,0 +1,3 @@
+# This deploys to the the App Engine live site service
+runtime: nodejs20
+instance_class: F2
