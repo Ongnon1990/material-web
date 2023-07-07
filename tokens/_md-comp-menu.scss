@@ -22,6 +22,8 @@ $supported-tokens: (
   'container-elevation',
   'container-shadow-color',
   'container-shape',
+  'max-height',
+  'min-width',
   // go/keep-sorted end
 );
 
@@ -41,8 +43,19 @@ $_default: (
   $tokens: values.validate(
     md-comp-menu.values($deps),
     $supported-tokens: $supported-tokens,
-    $unsupported-tokens: $unsupported-tokens
+    $unsupported-tokens: $unsupported-tokens,
+    $new-tokens: _get-new-tokens($exclude-hardcoded-values)
   );
 
   @return $tokens;
+}
+
+// add sizing tokens.
+@function _get-new-tokens($exclude-hardcoded-values) {
+  @return (
+    // go/keep-sorted start
+    'max-height': if($exclude-hardcoded-values, null, auto),
+    'min-width': if($exclude-hardcoded-values, null, 300px),
+    // go/keep-sorted end
+  );
 }

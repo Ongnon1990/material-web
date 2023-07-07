@@ -54,7 +54,8 @@
       )
     );
 
-    min-width: 300px;
+    min-width: var(--_min-width);
+    max-height: var(--_max-height);
   }
 
   .menu {
