@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {customElement} from 'lit/decorators.js';
+importcustomElement from 'lit/decorators.js';
 
-import {Icon} from './lib/icon.js';
-import {styles} from './lib/icon-styles.css.js';
+importIconfrom './lib/icon.js';
+importstyles from './lib/icon-styles.css.js';
 
-declare global {
-  interface HTMLElementTagNameMap {
+declareglobal {
+  interfaceHTMLElementTagNameMap {
     'md-icon': MdIcon;
   }
 }
@@ -19,8 +19,8 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement('md-icon')
-export class MdIcon extends Icon {
+@customElement md-icon
+exportclassMdIcon extendsIcon {
   /** @nocollapse */
   static override styles = [styles];
 }
